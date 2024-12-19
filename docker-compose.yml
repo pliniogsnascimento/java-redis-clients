@@ -1,4 +1,11 @@
 services:
+  app:
+    build: ./java-api-spring-data-redis
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/productsdb
+      LOGGING_LEVEL_ROOT: INFO
+    ports:
+      - "8080:8080"
   redis:
     image: "redis:alpine"
     ports:
