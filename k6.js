@@ -26,7 +26,7 @@ const insertProduct = () => {
   let res = http.post('http://localhost:8080/v1/products', JSON.stringify(body), params);
   console.log(res.status);
   check(res, { 'status was 201': (r) => r.status == 201 });
-  sleep(1)
+  sleep(1);
 }
 
 export default function () { insertProduct() }
